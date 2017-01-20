@@ -68,7 +68,7 @@ holder.
 
 ## Blockly
 
-<img src="images/lab01/blockly.PNG" width="128">
+<img src="images/lab01/blocky.PNG" width="128">
 
 ## Reflection
 
