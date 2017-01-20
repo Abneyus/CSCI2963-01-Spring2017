@@ -1,4 +1,4 @@
 ## Name: Elijah Abney 
 ### Github: abneye
 ### Slack: abneye
-Photo ![Abney](images/abneye.jpg)
+Photo ![Abney](images/abneye.jpg =128x)
