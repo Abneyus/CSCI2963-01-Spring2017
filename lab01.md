@@ -46,14 +46,14 @@ holder.
 
 ## Tree
 
-<img src="images/lab01/tree.png" width="128">
+<img src="images/lab01/tree.PNG" width="128">
 
 ## Crossword
 
-<img src="images/lab01/cw1.png" width="128">
-<img src="images/lab01/cw2.png" width="128">
-<img src="images/lab01/cw3.png" width="128">
-<img src="images/lab01/cw5.png" width="128">
+<img src="images/lab01/cw1.PNG" width="128">
+<img src="images/lab01/cw2.PNG" width="128">
+<img src="images/lab01/cw3.PNG" width="128">
+<img src="images/lab01/cw5.PNG" width="128">
 
 ## Regex
 
@@ -68,7 +68,7 @@ holder.
 
 ## Blockly
 
-<img src="images/lab01/blockly.png" width="128">
+<img src="images/lab01/blockly.PNG" width="128">
 
 ## Reflection
 
