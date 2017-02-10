@@ -1,4 +1,4 @@
-**** STEP01 ****
+## STEP01 ##
 ```
 bears:build/ (master) $ cmake ../step01                                                                            [11:45:53]
 -- The C compiler identification is GNU 4.8.4
@@ -23,7 +23,7 @@ bears:build/ (master✗) $ ./Tutorial 169                                       
 The square root of 169 is 13
 bears:build/ (master✗) $                                                                                           [11:46:19]
 ```
-**** STEP02 ****
+## STEP02 ##
 ```
 bears:build/ (master✗) $ cmake ../step02                                                                           [11:50:56]
 -- Configuring done
@@ -52,7 +52,7 @@ Computing sqrt of 169 to be 13
 The square root of 169 is 13
 bears:build/ (master✗) $                                                                                           [11:51:11]
 ```
-**** STEP03 ****
+## STEP03 ##
 ```
 bears:build/ (master✗) $ cmake ../step03                                                                           [11:52:05]
 -- The C compiler identification is GNU 4.8.4
@@ -97,7 +97,7 @@ Errors while running CTest
 bears:build/ (master✗) $                                                                                           [11:52:27]
 
 ```
-**** TEST04 ****
+## TEST04 ##
 ```
 bears:build/ (master✗) $ cmake ../step04                                                                           [11:53:24]
 -- The C compiler identification is GNU 4.8.4
@@ -126,7 +126,7 @@ bears:build/ (master✗) $ ./Tutorial 169                                       
 The square root of 169 is 13
 bears:build/ (master✗) $                                                                                           [11:53:46]
 ```
-**** STEP05 ****
+## STEP05 ##
 ```
 bears:build/ (master✗) $ cmake ../step05                                                                           [11:56:23]
 -- The C compiler identification is GNU 4.8.4
