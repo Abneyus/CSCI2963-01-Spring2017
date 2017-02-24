@@ -1,4 +1,4 @@
-#[Quickcast](lab05/quickcast.mp4)
+#[Quickcast](https://youtu.be/LFfN0dUBem8)
 
 Contributors:
 
@@ -26,7 +26,7 @@ backend_revision
 
 ios_latest
 
-#[Pizzadash](lab05/pizzadash.mp4)
+#[Pizzadash](https://youtu.be/tIyv-goj6rc)
 
 Contributors:
 
@@ -56,7 +56,7 @@ gh-pages
 
 setup
 
-#[Pokedex](lab05/pokedex.mp4)
+#[Pokedex](https://youtu.be/-jVygJkb12M)
 
 Contributors:
 
@@ -78,7 +78,7 @@ Current Branches:
 
 master
 
-#[PokeSnowdown](lab05/pokesnowdown.mp4)
+#[PokeSnowdown](https://youtu.be/3lJvaXkHO4I)
 
 Contributors:
 
@@ -104,7 +104,7 @@ gamedesignchange
 
 development
 
-#[Presto](lab05/presto.mp4)
+#[Presto](https://youtu.be/0ta_d_hvyq0)
 
 Contributors:
 
