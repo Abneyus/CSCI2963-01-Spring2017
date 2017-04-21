@@ -80,26 +80,33 @@ if __name__ == '__main__':
           %(number_of_nodes(G),number_of_edges(G)))
     print("%d connected components" % number_connected_components(G))
 
-    for (source,target) in [('chaos','order'),
-                            ('nodes','graph'),
-                            ('moron','smart'),
-                            ('pound','marks')]:
-        print("Shortest path between %s and %s is"%(source,target))
-        try:
-            sp=shortest_path(G, source, target)
-            for n in sp:
-                print(n)
-        except nx.NetworkXNoPath:
-            print("None")
+    count = 0
 
-    G=words_4graph()
+    for node in G.neighbors("shape"):
+        count += len(G.neighbors(node))
 
-    for (source,target) in [('cold','warm'),
-                            ('love','hate')]:
-        print("Shortest path between %s and %s is"%(source,target))
-        try:
-            sp=shortest_path(G, source, target)
-            for n in sp:
-                print(n)
-        except nx.NetworkXNoPath:
-            print("None")
+    print(count)
+
+    # for (source,target) in [('chaos','order'),
+    #                         ('nodes','graph'),
+    #                         ('moron','smart'),
+    #                         ('pound','marks')]:
+    #     print("Shortest path between %s and %s is"%(source,target))
+    #     try:
+    #         sp=shortest_path(G, source, target)
+    #         for n in sp:
+    #             print(n)
+    #     except nx.NetworkXNoPath:
+    #         print("None")
+    #
+    # G=words_4graph()
+    #
+    # for (source,target) in [('cold','warm'),
+    #                         ('love','hate')]:
+    #     print("Shortest path between %s and %s is"%(source,target))
+    #     try:
+    #         sp=shortest_path(G, source, target)
+    #         for n in sp:
+    #             print(n)
+    #     except nx.NetworkXNoPath:
+    #         print("None")

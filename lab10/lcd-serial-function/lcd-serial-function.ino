@@ -64,6 +64,7 @@ void setup() {
   // in the middle and call the compA
   OCR0A = 0x01;
   TIMSK0 |= _BV(OCIE0A);
+  Serial.setTimeout(500);
 }
 
 SIGNAL(TIMER0_COMPA_vect) 
@@ -80,27 +81,38 @@ SIGNAL(TIMER0_COMPA_vect)
 
 bool running = false;
 bool timeSet = false;
-bool blinkenlights = false;
+bool blinkenlights = true;
 int hour = 12, minute = 0, second = 0;
+int rhour, rminute, rsecond;
+int starttime;
 
 //Here is where your code goes. Arduino runs this function in an infinite loop after running the setup function
 void loop() {
-  int rhour, rminute, rsecond;
   //return cursor to starting position
   lcd.home();
-
-  //clear the lcd screen
-  lcd.clear();
   
-  //displays a String on the lcd screen. You can also print a String object
+  //displays a String on the lcd screen. You can also print a String object  
   String message = Serial.readString();
+
+  
 
   if(message[0] == 't')
   {
-    timeSet = true;
-    hour = ((message[1] - 48) * 10 + (message[2] - 48)) % 24;
-    minute = ((message[3] - 48) * 10 + (message[4] - 48)) % 60;
-    second = 0;
+    if(message.length() == 7)
+    {
+      timeSet = true;
+      rhour = hour = ((message[1] - 48) * 10 + (message[2] - 48)) % 24;
+      rminute = minute = ((message[3] - 48) * 10 + (message[4] - 48)) % 60;
+      rsecond = second = ((message[5] - 48) * 10 + (message[6] - 48)) % 60;
+    }
+    else
+    {
+      timeSet = true;
+      rhour = hour = ((message[1] - 48) * 10 + (message[2] - 48)) % 24;
+      rminute = minute = ((message[3] - 48) * 10 + (message[4] - 48)) % 60;
+      rsecond = second = 0;
+    }
+    
   }
   else if(message[0] == 'o')
   {
@@ -109,6 +121,10 @@ void loop() {
   else if(message[0] == 'r')
   {
     running = true;
+    starttime = millis();
+    hour = rhour;
+    minute = rminute;
+    second = rsecond;
   }
   else if(message.length() == 0)
   {
@@ -123,28 +139,30 @@ void loop() {
   {
     if(running)
     {
-      int runtime = millis() / 1000;
-      rsecond = (runtime % 60);
-
-      rminute = (minute + ((runtime / 60) % 60)) % 60;
-
-      rhour = (hour + ((runtime / 60 / 60) % 24)) % 24;
+      int runtime = (millis() - starttime) / 1000;
+      rsecond = (runtime + second) % 60;
+      rminute = (minute + ((runtime + second)/60)) % 60;
+      rhour = (hour + (((runtime + second)/60) + minute)/60) % 24;
     }
 
     lcd.print("Current time:");
     lcd.setCursor(0, 1);
 
-    String printTime = String(8);
+    char printTime[9];
 
+//  Too much math
     printTime[0] = ((rhour/10) + 48);
     printTime[1] = ((rhour%10) + 48);
-    printTime[2] = ":";
+    printTime[2] = ':';
     printTime[3] = ((rminute/10) + 48);
     printTime[4] = ((rminute%10) + 48);
-    printTime[5] = ":";
+    printTime[5] = ':';
     printTime[6] = ((rsecond/10) + 48);
     printTime[7] = ((rsecond%10) + 48);
+    printTime[8] = 0;
 
+
+    lcd.clear();
     lcd.print(printTime);
   }
   else
@@ -153,20 +171,22 @@ void loop() {
    {
     blinkenlights = false;
 
+    lcd.clear();
+
     lcd.print("Current time:");
     lcd.setCursor(0, 1);
 
-    lcd.print("12:00:00");
+    lcd.print("00:00:00");
     
    }
    else
    {
     blinkenlights = true;
+    lcd.clear();
    }
   }
-
-  //sleep for 1 second
-  delay(1000);
+  
+  delay(500);
 }
 
 

@@ -88,9 +88,9 @@ void loop() {
   lcd.clear();
   
   //displays a String on the lcd screen. You can also print a String object
-  String message = Serial.readString();
+//  String message = Serial.readString();
   
-  lcd.print(message);
+  lcd.print("Hello, world!");
   
   //sets the x,y position of the cursor. In this case we move the cursor to the second line.
 //  lcd.setCursor(0, 1);
